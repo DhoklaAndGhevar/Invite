@@ -294,7 +294,9 @@
 .events{--k:1;padding:calc(14px*var(--k)) 16px calc(14px*var(--k))!important}
 .events h2{font-size:calc(clamp(28px,7.4vw,36px)*var(--k))!important}
 .events .sub{font-size:calc(9.5px*var(--k))!important;margin-top:calc(4px*var(--k))!important}
-.grid{gap:calc(10px*var(--k))!important;margin:calc(14px*var(--k)) auto 0!important}
+html,body{min-height:0!important}
+body{height:100vh;height:100dvh;overflow-x:hidden}
+.grid{grid-template-columns:repeat(2,1fr)!important;max-width:520px!important;gap:calc(10px*var(--k))!important;margin:calc(14px*var(--k)) auto 0!important}
 .ev{padding:calc(11px*var(--k)) 8px!important;gap:calc(10px*var(--k))!important}
 .ev svg{width:calc(26px*var(--k))!important;height:calc(26px*var(--k))!important}
 .ev span{font-size:calc(19px*var(--k))!important}
@@ -513,10 +515,10 @@
     var k=1;ev.style.setProperty('--k',1);
     var minH=parseFloat(getComputedStyle(hero).minHeight)||0;
     var avail=window.innerHeight-minH;
-    for(var i=0;i<4;i++){
+    for(var i=0;i<10;i++){
       var h=ev.offsetHeight;
       if(h<=avail+0.5)break;
-      k=Math.max(.5,k*(avail/h)*.995);
+      k=Math.max(.3,k*(avail/h)*.99);
       ev.style.setProperty('--k',k);
     }
   }

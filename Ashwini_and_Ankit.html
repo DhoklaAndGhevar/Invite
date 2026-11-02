@@ -285,12 +285,19 @@
 #p-shaadi:checked ~ #shaadi{display:block;animation:pagein .45s ease both}
 #p-shaadi:focus-visible ~ main .ev[for="p-shaadi"]{outline:3px solid #b79ae0;outline-offset:3px}
 </style>
+<style>
+/* fit the home screen to the device height */
+.card{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh;max-width:max(360px,min(720px,calc(100dvh*.55)))}
+.hero{flex:1 1 auto;aspect-ratio:auto!important;min-height:300px}
+.events{flex:none}
+@media (min-width:760px){body{padding:0!important}.card{border-radius:0!important}}
+</style>
 </head>
 <body>
 <input class="rb" type="radio" name="pg" id="p-none" checked aria-label="No event page open"><input class="rb" type="radio" name="pg" id="p-mehendi" aria-label="Mehendi page"><input class="rb" type="radio" name="pg" id="p-sangeet" aria-label="Sangeet page"><input class="rb" type="radio" name="pg" id="p-haldi" aria-label="Haldi page"><input class="rb" type="radio" name="pg" id="p-shaadi" aria-label="Shaadi page">
 <main class="card">
 <header class="hero">
-    <svg class="scene" viewBox="0 0 800 980" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of the couple standing on a flower-decked open stage facing the sea at sunset">
+    <svg class="scene" viewBox="0 0 800 980" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration of the couple standing on a flower-decked open stage facing the sea at sunset">
       <defs>
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#d6cbf2"></stop><stop offset=".3" stop-color="#ebc4dc"></stop>
